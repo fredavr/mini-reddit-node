@@ -19,11 +19,12 @@ app.get('/', (req, res) => {
 
 // "Monter" les routes des liens
 app.use('/api/links', linkRoutes);
+app.use('/api/auth', require('./routes/auth'));
 
 dotenv.config();
 connectDB();
 
-const PORT = process.env.PORT  || 3000;
-app.listen(PORT,() => {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
     console.log(`Serveur démarré sur le port ${PORT}`);
 });
