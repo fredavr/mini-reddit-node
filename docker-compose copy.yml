@@ -9,7 +9,7 @@ services:
         - MONGO_URI=mongodb://hubadmin:toto@mongo/mini-reddit?retryWrites=true&authSource=admin
         - JWT_SECRET=k31hTAiQr09k0ceCN9cRh4NAmx96m4509iq/GcXa6WflTPBziPlincQalH4kY4ts
     ports:
-      - "3000:3000"
+      - "3000/3000"
     depends_on:
       - mongo
     restart: unless-stopped
@@ -30,5 +30,3 @@ volumes:
 
     # pour l'exécuter :
     # docker compose up -d
-    # pour voir les logs
-    # docker logs mini-reddit-api

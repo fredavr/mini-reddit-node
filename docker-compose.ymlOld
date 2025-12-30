@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+  mongodb:
+    container_name: le-hub-mongo
+    image: mongo:8.2.1
+    restart: always
+    ports:
+      - "8090:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: hubadmin
+      MONGO_INITDB_ROOT_PASSWORD: toto
+      MONGO_INITDB_DATABASE: mini-reddit
+    volumes:
+      - le-hub-mongo-data:/data/db
+volumes:
+  le-hub-mongo-data:
